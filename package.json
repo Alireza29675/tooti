@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Alireza29675/tooti/issues"
   },
-  "homepage": "https://github.com/Alireza29675/tooti#readme"
+  "homepage": "https://github.com/Alireza29675/tooti#readme",
+  "dependencies": {
+    "puppeteer": "^9.0.0"
+  }
 }
