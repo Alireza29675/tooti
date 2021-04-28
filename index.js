@@ -9,11 +9,8 @@ const puppeteer = require('puppeteer');
   await page.addScriptTag({
     path: './src/client-scripts/css-path.js'
   })
+  await page.addScriptTag({
+    path: './src/client-scripts/tracker.js'
+  })
   await page.exposeFunction('reportEvent', info => console.log(info));
-  await page.evaluate(() => {
-    document.addEventListener('click', e => reportEvent({
-      targetName: window.sess.cssPath(e.target),
-      eventType: 'click'
-    }), true);
-  });
 })();
