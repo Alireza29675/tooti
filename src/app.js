@@ -1,9 +1,9 @@
 const addScriptTags = async (page) => {
   await page.addScriptTag({
-    path: './src/client-scripts/css-path.js'
+    path: './src/injections/js/css-path.js'
   })
   await page.addScriptTag({
-    path: './src/client-scripts/tracker.js'
+    path: './src/injections/js/tracker.js'
   })
 }
 
