@@ -5,12 +5,12 @@ const getStyleModulePath = (moduleName) => `${baseUrl}/css/${moduleName}.css`
 
 module.exports = {
   injectScripts: async ({ page, modules = [] }) => {
-    for (let moduleName of modules) {
+    for (const moduleName of modules) {
       await page.addScriptTag({ path: getScriptModulePath(moduleName) })
     }
   },
   injectStyles: async ({ page, modules = [] }) => {
-    for (let moduleName of modules) {
+    for (const moduleName of modules) {
       await page.addStyleTag({ path: getStyleModulePath(moduleName) })
     }
   }
