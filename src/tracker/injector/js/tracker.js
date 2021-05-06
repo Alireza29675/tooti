@@ -1,4 +1,4 @@
-document.addEventListener('click', e => reportEvent({
+document.addEventListener('click', e => window.reportEvent({
   payload: {
     path: window.sess.cssPath(e.target),
   },
