@@ -1,3 +1,5 @@
+const { injectScripts } = require('./injector')
+
 class TrackingPage {
   constructor(browser) {
     this.browser = browser;
@@ -28,17 +30,13 @@ class TrackingPage {
       timeout: 0,
       waitUntil: 'load'
     })
-    await this.addScriptTags()
+    // Inject all client-side script tags
+    await injectScripts({
+      page: this.page,
+      modules: ['css-path', 'tracker']
+    })
+    // Going for tracking again
     this.watchNavigation()
-  }
-
-  async addScriptTags() {
-    await this.page.addScriptTag({
-      path: './src/injections/js/css-path.js'
-    })
-    await this.page.addScriptTag({
-      path: './src/injections/js/tracker.js'
-    })
   }
 
   goto(url) {
