@@ -16,7 +16,7 @@ class EventStorage {
 
     const event = {
       type: emittedEvent.type,
-      payload: emittedEvent.type,
+      payload: emittedEvent.payload,
       timestamp
     }
 
