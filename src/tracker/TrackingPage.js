@@ -1,8 +1,10 @@
+const EventLogger = require('./EventLogger')
 const { injectScripts } = require('./injector')
 
 class TrackingPage {
   constructor(browser) {
     this.browser = browser;
+    this.logger = new EventLogger();
     this.init();
   }
 
@@ -22,7 +24,9 @@ class TrackingPage {
   }
 
   async exposeFunctionsToClient() {
-    await this.page.exposeFunction('reportEvent', info => console.log(info));
+    await this.page.exposeFunction('reportEvent', event => {
+      this.logger.log(event)
+    });
   }
 
   async watchNavigation() {

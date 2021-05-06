@@ -1,4 +1,6 @@
 document.addEventListener('click', e => reportEvent({
-  targetName: window.sess.cssPath(e.target),
-  eventType: 'click'
+  payload: {
+    path: window.sess.cssPath(e.target),
+  },
+  type: 'click'
 }), true);
