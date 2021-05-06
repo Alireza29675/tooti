@@ -1,10 +1,10 @@
-const EventLogger = require('./EventLogger')
+const EventStorage = require('./EventStorage')
 const { injectScripts } = require('./injector')
 
 class TrackingPage {
   constructor(browser) {
     this.browser = browser;
-    this.logger = new EventLogger();
+    this.storage = new EventStorage();
     this.init();
   }
 
@@ -25,7 +25,7 @@ class TrackingPage {
 
   async exposeFunctionsToClient() {
     await this.page.exposeFunction('reportEvent', event => {
-      this.logger.log(event)
+      this.storage.store(event)
     });
   }
 
