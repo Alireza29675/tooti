@@ -32,12 +32,19 @@ class TrackingPage {
   async watchNavigation() {
     await this.page.waitForNavigation({
       timeout: 0,
-      waitUntil: 'load'
+      waitUntil: 'domcontentloaded'
     })
     // Inject all client-side script tags
     await injectScripts({
       page: this.page,
       modules: ['css-path', 'tracker']
+    })
+    // Storing navigations
+    this.storage.store({
+      type: 'navigation',
+      payload: {
+        url: this.page.url()
+      }
     })
     // Going for tracking again
     this.watchNavigation()
