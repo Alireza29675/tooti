@@ -42,7 +42,8 @@ class TrackingPage {
         modules: [
           'css-path',
           'click-tracker',
-          'input-tracker'
+          'input-tracker',
+          'keyboard-tracker',
         ]
       })
       // Inject all client-side style tags
