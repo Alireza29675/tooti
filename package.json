@@ -19,7 +19,8 @@
   "homepage": "https://github.com/Alireza29675/tooti#readme",
   "dependencies": {
     "nedb": "^1.8.0",
-    "puppeteer": "^9.0.0"
+    "puppeteer": "^9.0.0",
+    "unique-selector": "^0.5.0"
   },
   "devDependencies": {
     "@babel/core": "^7.14.0",

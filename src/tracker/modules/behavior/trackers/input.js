@@ -1,4 +1,4 @@
-import cssPath from '../utils/css-path'
+import unique from 'unique-selector';
 import { MAIN_KEYS } from './common/keys'
 
 export default function(reportEvent) {
@@ -13,7 +13,7 @@ export default function(reportEvent) {
 
       reportEvent({
         text: e.target.value,
-        path: cssPath(e.target),
+        path: unique(e.target),
       })
     })
   }
