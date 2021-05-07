@@ -1,5 +1,5 @@
 const { connectToStore } = require('../store')
-const { injectModule } = require('./injector')
+const { inject } = require('./modules')
 
 class TrackingPage {
   constructor({ id, browser }) {
@@ -38,8 +38,8 @@ class TrackingPage {
         timeout: 0,
         waitUntil: 'domcontentloaded'
       })
-      // Inject all client-side script tags
-      await injectModule({
+      // Inject all client-side modules
+      await inject({
         page: this.page,
         modules: ['behavior']
       })
