@@ -6,9 +6,6 @@ export default function (reportEvent) {
       return;
     }
     
-    reportEvent({
-      payload: { key },
-      type: 'keyboard'
-    })
+    reportEvent({ key })
   })
 }

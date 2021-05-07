@@ -1,3 +1,5 @@
+import cssPath from '../utils/css-path'
+
 const NOT_ALLOWED_KEYS = ['Enter', 'Escape', 'Tab']
 
 export default function(reportEvent) {
@@ -11,11 +13,8 @@ export default function(reportEvent) {
       }
 
       reportEvent({
-        payload: {
-          text: e.target.value,
-          path: window.tooti.cssPath(e.target),
-        },
-        type: 'input'
+        text: e.target.value,
+        path: cssPath(e.target),
       })
     })
   }

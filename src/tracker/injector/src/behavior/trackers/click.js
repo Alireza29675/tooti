@@ -1,3 +1,5 @@
+import cssPath from '../utils/css-path'
+
 const addTemporaryClass = (element, className, duration = 500) => {
   element.classList.add(className)
   setTimeout(() => {
@@ -8,11 +10,7 @@ const addTemporaryClass = (element, className, duration = 500) => {
 export default function (reportEvent) {
   document.addEventListener('click', e => {
     addTemporaryClass(e.target, 'tooti-clicked-item')
-    reportEvent({
-      payload: {
-        path: window.tooti.cssPath(e.target),
-      },
-      type: 'click'
-    })
+    
+    reportEvent({ path: cssPath(e.target) })
   }, true);
 }
