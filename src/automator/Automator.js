@@ -19,19 +19,33 @@ class Automator {
   }
 
   async automate() {
-    for (const event of this.events) {
-      const { type, payload } = event
+    for (let i = 0; i < this.events.length; i++) {
+      const { type, payload } = this.events[i]
 
-      // check if event is click
+      // simulating navigation
+      if (type === 'navigation' && i === 0) {
+        await this.simulateNavigation(payload.url)
+      }
+
+      // simulating click
       if (type === 'click') {
         await this.simulateClick(payload.path)
       }
 
-      // check if event is keyboard press
+      // simulating keyboard press
       if (type === 'keyboard') {
         await this.simulateKeypress(payload.key)
       }
+
+      // simulating input
+      if (type === 'input') {
+        await this.simulateInput(payload.key)
+      }
     }
+  }
+
+  async simulateNavigation(url) {
+    await this.page.goto(url)
   }
 
   async simulateClick(selector) {
@@ -40,7 +54,16 @@ class Automator {
   }
 
   async simulateKeypress(key) {
-    await page.keyboard.press(key);
+    await this.page.keyboard.press(key);
+  }
+
+  async simulateInput(selector, text) {
+    await this.page.evaluate(({ selector, text }) => {
+      document.querySelector(selector).value = text;
+    }, {
+      selector,
+      text
+    })
   }
 }
 

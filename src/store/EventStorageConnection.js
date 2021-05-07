@@ -14,14 +14,26 @@ class EventStorageConnection {
 
   getEvents(conditions = {}) {
     return new Promise((resolve, reject) => {
-      this.db.find(conditions)
-        .sort({ timestamp: 1 })
-        .exec((err, events) => {
-          if (err) {
-            return reject(err)
-          }
-          resolve(events)
-        })   
+      this.db.find(conditions).sort({ timestamp: 1 }).exec((err, events) => {
+        if (err) {
+          return reject(err)
+        }
+
+        resolve(events)
+      })   
+    })
+  }
+
+  // clears all the store data
+  clear() {
+    return new Promise((resolve, reject) => {
+      this.db.remove({}, { multi: true }, function (err) {
+        if (err) {
+          return reject(err)
+        }
+        
+        resolve()
+      });
     })
   }
 

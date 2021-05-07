@@ -14,6 +14,8 @@ class TrackingPage {
     this.page = await this.browser.newPage();
     // Async initializations
     await this.exposeFunctionsToClient();
+    // Clear the store data
+    await this.storage.clear();
     // Sync initializations
     this.watchNavigation();
     // post preparation
