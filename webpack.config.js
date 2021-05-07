@@ -1,10 +1,15 @@
+const path = require('path');
+
+const injectorPath = path.resolve(__dirname, 'src/tracker/injector/')
+
 module.exports = {
   mode: 'development',
   entry: {
-    tracker: {
-      import: './src/tracker/injector/src/index.js',
-      filename: './src/tracker/injector/[name].js'
-    },
+    behavior: path.resolve(injectorPath, 'src/behavior/index.js')
   },
+  output: {
+    path: path.resolve(injectorPath, 'dist'),
+    filename: '[name].bundle.js'
+  }
 };
 

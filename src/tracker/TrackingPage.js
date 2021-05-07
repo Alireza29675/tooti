@@ -1,5 +1,5 @@
 const { connectToStore } = require('../store')
-const { injectScripts, injectStyles } = require('./injector')
+const { injectModule } = require('./injector')
 
 class TrackingPage {
   constructor({ id, browser }) {
@@ -39,19 +39,9 @@ class TrackingPage {
         waitUntil: 'domcontentloaded'
       })
       // Inject all client-side script tags
-      await injectScripts({
+      await injectModule({
         page: this.page,
-        modules: [
-          'css-path',
-          'click-tracker',
-          'input-tracker',
-          'keyboard-tracker',
-        ]
-      })
-      // Inject all client-side style tags
-      await injectStyles({
-        page: this.page,
-        modules: ['tracker']
+        modules: ['behavior']
       })
       // Storing navigations
       this.storage.store({
