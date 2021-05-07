@@ -5,7 +5,7 @@ class TrackingPage {
   constructor({ id, browser }) {
     this.uniqueId = id
     this.browser = browser;
-    this.storage = new EventStorage(id);
+    this.storage = new EventStorage({ id });
     this.init();
   }
 
