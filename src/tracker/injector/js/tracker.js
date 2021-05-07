@@ -2,7 +2,7 @@ const addTemporaryClass = (element, className, duration = 500) => {
   element.classList.add(className)
   setTimeout(() => {
     element.classList.remove(className)
-  }, 500)
+  }, duration)
 }
 
 document.addEventListener('click', e => {
