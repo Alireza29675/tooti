@@ -5,6 +5,7 @@ class Automator {
     this.id = id
     this.browser = browser;
     this.storage = connectToStore(id);
+    this.events = [];
     this.init();
   }
 
@@ -12,7 +13,34 @@ class Automator {
     // Initializing the page
     this.page = await this.browser.newPage();
     // fetch data from database
-    console.log(await this.storage.getEvents())
+    this.events = await this.storage.getEvents()
+
+    this.automate()
+  }
+
+  async automate() {
+    for (const event of this.events) {
+      const { type, payload } = event
+
+      // check if event is click
+      if (type === 'click') {
+        await this.simulateClick(payload.path)
+      }
+
+      // check if event is keyboard press
+      if (type === 'keyboard') {
+        await this.simulateKeypress(payload.key)
+      }
+    }
+  }
+
+  async simulateClick(selector) {
+    await this.page.waitForSelector(selector)
+    await this.page.click(selector)
+  }
+
+  async simulateKeypress(key) {
+    await page.keyboard.press(key);
   }
 }
 
