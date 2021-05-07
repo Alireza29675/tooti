@@ -7,7 +7,7 @@
     const inputs = document.querySelectorAll('input');
 
     for (const input of inputs) {
-      input.addEventListener('keyup', (e) => {
+      input.addEventListener('input', (e) => {
         // If pressed enter or tab or escape
         if (notAllowedKeys.includes(e.key)) {
           return;
