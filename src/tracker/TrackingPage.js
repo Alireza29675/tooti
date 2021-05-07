@@ -39,7 +39,11 @@ class TrackingPage {
       // Inject all client-side script tags
       await injectScripts({
         page: this.page,
-        modules: ['css-path', 'tracker']
+        modules: [
+          'css-path',
+          'click-tracker',
+          'input-tracker'
+        ]
       })
       // Inject all client-side style tags
       await injectStyles({

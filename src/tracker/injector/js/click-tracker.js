@@ -9,7 +9,7 @@ document.addEventListener('click', e => {
   addTemporaryClass(e.target, 'tooti-clicked-item')
   window.reportEvent({
     payload: {
-      path: window.sess.cssPath(e.target),
+      path: window.tooti.cssPath(e.target),
     },
     type: 'click'
   })

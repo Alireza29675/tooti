@@ -6,7 +6,7 @@ module.exports = async function app() {
   const browser = await puppeteer.launch({
     headless: false,
     args: [
-      // '--auto-open-devtools-for-tabs',
+      '--auto-open-devtools-for-tabs',
       '--window-size=1920,1080',
     ],
     defaultViewport: null

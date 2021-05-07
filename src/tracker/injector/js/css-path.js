@@ -1,6 +1,6 @@
-window.sess = window.sess || {}
+window.tooti = window.tooti || {}
 
-window.sess.cssPath = function (el) {
+window.tooti.cssPath = function (el) {
   if (!(el instanceof Element)) return;
   var path = [];
   while (el.nodeType === Node.ELEMENT_NODE) {
