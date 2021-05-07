@@ -1,5 +1,7 @@
 const puppeteer = require('puppeteer');
-const TrackingPage = require('./tracker/TrackingPage')
+
+const { createTrackingPage } = require('./tracker')
+const { automate } = require('./automator')
 
 module.exports = async function app() {
   // Launching Chromium
@@ -12,8 +14,7 @@ module.exports = async function app() {
     defaultViewport: null
   });
 
-  // Creating a new tracking page
-  new TrackingPage({
+  automate({
     id: 'test',
     browser
   })
