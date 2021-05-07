@@ -1,26 +1,14 @@
-(() => {
-  window.tooti = window.tooti || {}
+const keysToTrack = ['Enter', 'Escape', 'Tab']
 
-  const start = () => {
-    const keysToTrack = ['Enter', 'Escape', 'Tab']
+export default function (reportEvent) {    
+  document.addEventListener('keydown', ({ key }) => {
+    if (!keysToTrack.includes(key)) {
+      return;
+    }
     
-    document.addEventListener('keydown', ({ key }) => {
-      if (!keysToTrack.includes(key)) {
-        return;
-      }
-      
-      window.reportEvent({
-        payload: {
-          key,
-        },
-        type: 'keyboard'
-      })
+    reportEvent({
+      payload: { key },
+      type: 'keyboard'
     })
-  }
-
-  // prevent multiple implementations
-  if (!window.tooti._keyboardTrackerIsActive) {
-    start();
-  }
-  window.tooti._keyboardTrackerIsActive = true
-})()
+  })
+}
