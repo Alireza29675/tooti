@@ -105,3 +105,6 @@ dist
 
 # Database files
 *.db
+
+# Bundle files
+*.bundle.js
