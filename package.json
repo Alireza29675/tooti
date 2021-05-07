@@ -22,7 +22,11 @@
     "puppeteer": "^9.0.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.14.0",
+    "babel-loader": "^8.2.2",
+    "css-loader": "^5.2.4",
     "prettier": "^2.2.1",
+    "style-loader": "^2.0.0",
     "webpack": "^5.36.2",
     "webpack-cli": "^4.7.0"
   }

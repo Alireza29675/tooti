@@ -10,6 +10,18 @@ module.exports = {
   output: {
     path: path.resolve(injectorPath, 'dist'),
     filename: '[name].bundle.js'
+  },
+  module: {
+    rules: [
+      {
+        test: /\.jsx?$/,
+        use: ['babel-loader']
+      },
+      {
+        test: /\.css$/i,
+        use: ['style-loader', 'css-loader'],
+      },
+    ]
   }
 };
 
