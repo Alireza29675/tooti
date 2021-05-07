@@ -35,9 +35,9 @@ _// work in progress_
 - [ ] Realistic delays between actions
 - [ ] Show suitable errors if selectors have been changed
 
-### Interface
+### User Interface
 
-- [ ] Create a cli interface
+- [ ] Create a command-line interface
   - So user can create new sessions
   - Can see a list of recorded sessions
   - Reply recorded sessions
