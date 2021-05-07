@@ -18,13 +18,21 @@ _// work in progress_
 
 ## Todos
 
-- [ ] **Automator:** add delays between tasks
-- [ ] **Automator:** show suitable errors if selectors have changed
-- [ ] **Interface:** create a cli interface
+### Automator
+
+- [ ] Add delays between tasks
+- [ ] Show suitable errors if selectors have changed
+
+### Interface
+
+- [ ] Create a cli interface
   - So user can create new sessions
   - Can see a list of recorded sessions
   - Reply recorded sessions
-- [ ] **Documentation:** make a readme tutorial with images
+
+### Documentation
+
+- [ ] Make a readme tutorial with images
 
 ## Author
 
