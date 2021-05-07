@@ -13,5 +13,8 @@ module.exports = async function app() {
   });
 
   // Creating a new tracking page
-  new TrackingPage(browser)
+  new TrackingPage({
+    id: 'test',
+    browser
+  })
 }
