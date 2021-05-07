@@ -11,6 +11,7 @@ Tooti is an automation tool which tracks user's behavior in a browser and automa
 
 - [Node.js](https://nodejs.org/en/)
 - Google's [puppeteer](https://developers.google.com/web/tools/puppeteer)
+- [NeDB](https://github.com/louischatriot/nedb)
 
 ## Documentation
 
@@ -18,14 +19,21 @@ _// work in progress_
 
 ## Todos
 
+### Tracker
+
+- [x] Opens an under track browser ✔️
+- [x] Makes bundled modules out of script tags ✔️
+- [x] Injects behavior tracker module to the pages while navigating the web ✔️
+- [x] Stores all events into local database ✔️
+
 ### Automator
 
-- [x] Automate clicks ✔️
-- [x] Automate typing in text inputs ✔️
-- [x] Automate pressing enter, tab and escape ✔️
-- [ ] Automate navigations
-- [ ] Add delays between tasks
-- [ ] Show suitable errors if selectors have changed
+- [x] Can automate clicks ✔️
+- [x] Can automate typing text in inputs ✔️
+- [x] Can automate pressing enter, tab and escape ✔️
+- [ ] Can automate navigations
+- [ ] Realistic delays between actions
+- [ ] Show suitable errors if selectors have been changed
 
 ### Interface
 
