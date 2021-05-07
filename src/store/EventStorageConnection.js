@@ -1,4 +1,4 @@
-const { createStore } = require('./db')
+const { connectToStore } = require('./db')
 
 const EVENT_TIME_THRESHOLD = 20;
 
@@ -9,7 +9,16 @@ class EventStorageConnection {
     this.lastTimestamp = Date.now()
 
     // creating the database
-    this.db = createStore(id)
+    this.db = connectToStore(`events/${id}`)
+  }
+
+  getEvents(conditions = {}) {
+    return new Promise((resolve, reject) => this.db.find(conditions, (err, events) => {
+      if (err) {
+        return reject(err)
+      }
+      resolve(events)
+    }))
   }
 
   // Main store function

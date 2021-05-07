@@ -1,6 +1,6 @@
 const Datastore = require('nedb')
 
-function createStore(name) {
+function connectToStore(name) {
   return new Datastore({
     filename: `./data/${name}.db`,
     autoload: true,
@@ -8,5 +8,5 @@ function createStore(name) {
 }
 
 module.exports = {
-  createStore
+  connectToStore
 }
