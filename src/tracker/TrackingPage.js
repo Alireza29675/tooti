@@ -1,11 +1,11 @@
-const EventStorageConnection = require('../store/EventStorageConnection')
+const { connectToStore } = require('../store')
 const { injectScripts, injectStyles } = require('./injector')
 
 class TrackingPage {
   constructor({ id, browser }) {
-    this.uniqueId = id
+    this.id = id
     this.browser = browser;
-    this.storage = new EventStorageConnection({ id });
+    this.storage = connectToStore(id);
     this.init();
   }
 
