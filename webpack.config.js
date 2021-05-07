@@ -1,6 +1,6 @@
 const path = require('path');
 
-const injectorPath = path.resolve(__dirname, 'src/tracker/injector/')
+const injectorPath = path.resolve(__dirname, 'src/tracker/modules/')
 
 module.exports = {
   mode: 'development',
