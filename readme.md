@@ -20,9 +20,9 @@ _// work in progress_
 
 ### Automator
 
-- ✅ Automate clicks
-- ✅ Automate typing in text inputs
-- ✅ Automate pressing enter, tab and escape
+- [x] Automate clicks ✔️
+- [x] Automate typing in text inputs ✔️
+- [x] Automate pressing enter, tab and escape ✔️
 - [ ] Automate navigations
 - [ ] Add delays between tasks
 - [ ] Show suitable errors if selectors have changed
