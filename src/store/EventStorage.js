@@ -1,7 +1,10 @@
+const { createStore } = require('./db')
+
 const EVENT_TIME_THRESHOLD = 20;
 
 class EventStorage {
-  constructor() {
+  constructor(id) {
+    this.db = createStore(id)
     this.lastTimestamp = Date.now()
     this.events = [];
   }
