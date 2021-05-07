@@ -5,7 +5,7 @@ const injectorPath = path.resolve(__dirname, 'src/tracker/modules/')
 module.exports = {
   mode: 'development',
   entry: {
-    behavior: path.resolve(injectorPath, 'src/behavior/index.js')
+    behavior: path.resolve(injectorPath, 'behavior/index.js')
   },
   output: {
     path: path.resolve(injectorPath, 'dist'),
