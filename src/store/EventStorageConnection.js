@@ -13,12 +13,16 @@ class EventStorageConnection {
   }
 
   getEvents(conditions = {}) {
-    return new Promise((resolve, reject) => this.db.find(conditions, (err, events) => {
-      if (err) {
-        return reject(err)
-      }
-      resolve(events)
-    }))
+    return new Promise((resolve, reject) => {
+      this.db.find(conditions)
+        .sort({ timestamp: 1 })
+        .exec((err, events) => {
+          if (err) {
+            return reject(err)
+          }
+          resolve(events)
+        })   
+    })
   }
 
   // Main store function
