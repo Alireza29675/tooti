@@ -21,7 +21,7 @@ class TrackingPage {
   }
 
   onReady() {
-    this.page.goto('https://google.com')
+    // this.goto('https://google.com')
   }
 
   async exposeFunctionsToClient() {
