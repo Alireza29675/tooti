@@ -1,8 +1,8 @@
-const keysToTrack = ['Enter', 'Escape', 'Tab']
+import { MAIN_KEYS } from './common/keys'
 
 export default function (reportEvent) {    
   document.addEventListener('keydown', ({ key }) => {
-    if (!keysToTrack.includes(key)) {
+    if (!MAIN_KEYS.includes(key)) {
       return;
     }
     

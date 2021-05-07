@@ -1,6 +1,5 @@
 import cssPath from '../utils/css-path'
-
-const NOT_ALLOWED_KEYS = ['Enter', 'Escape', 'Tab']
+import { MAIN_KEYS } from './common/keys'
 
 export default function(reportEvent) {
   const inputs = document.querySelectorAll('input');
@@ -8,7 +7,7 @@ export default function(reportEvent) {
   for (const input of inputs) {
     input.addEventListener('input', (e) => {
       // If pressed enter or tab or escape
-      if (NOT_ALLOWED_KEYS.includes(e.key)) {
+      if (MAIN_KEYS.includes(e.key)) {
         return;
       }
 
