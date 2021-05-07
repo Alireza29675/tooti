@@ -20,6 +20,10 @@ _// work in progress_
 
 ### Automator
 
+- [x] Simulate clicks
+- [x] Simulate typing in text inputs
+- [x] Simulate pressing enter, tab and escape
+- [ ] Simulate navigations
 - [ ] Add delays between tasks
 - [ ] Show suitable errors if selectors have changed
 
