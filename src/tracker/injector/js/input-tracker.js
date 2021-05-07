@@ -2,10 +2,17 @@
   window.tooti = window.tooti || {}
 
   const start = () => {
+    const notAllowedKeys = ['Enter', 'Escape', 'Tab']
+
     const inputs = document.querySelectorAll('input');
 
     for (const input of inputs) {
-      input.addEventListener('change', (e) => {
+      input.addEventListener('keyup', (e) => {
+        // If pressed enter or tab or escape
+        if (notAllowedKeys.includes(e.key)) {
+          return;
+        }
+
         window.reportEvent({
           payload: {
             text: e.target.value,
