@@ -2,7 +2,7 @@ const { createStore } = require('./db')
 
 const EVENT_TIME_THRESHOLD = 20;
 
-class EventStorage {
+class EventStorageConnection {
   constructor({ id, silent = false }) {
     // configurations
     this.silent = silent
@@ -50,4 +50,4 @@ class EventStorage {
   }
 }
 
-module.exports = EventStorage
+module.exports = EventStorageConnection
