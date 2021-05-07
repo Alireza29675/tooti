@@ -1,5 +1,5 @@
 const EventStorage = require('./EventStorage')
-const { injectScripts } = require('./injector')
+const { injectScripts, injectStyles } = require('./injector')
 
 class TrackingPage {
   constructor(browser) {
@@ -38,6 +38,11 @@ class TrackingPage {
     await injectScripts({
       page: this.page,
       modules: ['css-path', 'tracker']
+    })
+    // Inject all client-side style tags
+    await injectStyles({
+      page: this.page,
+      modules: ['tracker']
     })
     // Storing navigations
     this.storage.store({

@@ -1,0 +1,12 @@
+.tooti-clicked-item {
+  animation: on-click 0.8s linear 0.5;
+}
+
+@keyframes on-click {
+  0% {
+    outline: 4px solid rgb(170, 170, 170);
+  }
+  100% {
+    outline: 4px solid auto;
+  }
+}
