@@ -11,6 +11,9 @@ module.exports = {
     path: path.resolve(injectorPath, 'dist'),
     filename: '[name].bundle.js'
   },
+  stats: {
+    modules: false,
+  },
   module: {
     rules: [
       {

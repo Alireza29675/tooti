@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "npm run bundle && node index.js",
     "bundle": "webpack"
   },
   "repository": {
