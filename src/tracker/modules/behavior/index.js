@@ -1,5 +1,5 @@
 import trackClicks from './trackers/click'
-import trackInputs from './trackers/input'
+import trackFocuses from './trackers/focus'
 import trackKeyboard from './trackers/keyboard'
 
 import reportEvent from './utils/reportEvent'
@@ -8,7 +8,7 @@ import './stylesheets/style.css'
 
 const start = () => {
   trackClicks(reportEvent('click'))
-  trackInputs(reportEvent('input'))
+  trackFocuses(reportEvent('focus'))
   trackKeyboard(reportEvent('keyboard'))
 }
 
