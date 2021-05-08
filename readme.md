@@ -31,8 +31,10 @@ _// work in progress_
 - [x] Can automate clicks ✔️
 - [x] Can automate typing text in inputs ✔️
 - [x] Can automate pressing enter, tab and escape ✔️
-- [ ] Can automate navigations
-- [ ] Realistic delays between actions
+- [x] Can automate navigations ✔️
+- [x] Robot-like delays between actions ✔️
+- [ ] Go to urls which has been entered manually by user
+- [ ] Human-like delays between actions
 - [ ] Show suitable errors if selectors have been changed
 
 ### User Interface
