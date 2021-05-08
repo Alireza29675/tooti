@@ -1,6 +1,6 @@
-const { createBrowser, automate } = require('./core')
+const { createBrowser } = require('./core')
 
 module.exports = async function app() {
   const browser = await createBrowser()
-  automate({ id: 'test', browser })
+  browser.automate('test')
 }

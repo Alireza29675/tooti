@@ -3,11 +3,10 @@ const { createTrackingPage } = require('./tracker')
 const { automate } = require('./automator')
 
 class Browser {
-  constructor({ headless = false }) {
+  constructor({ headless = false } = {}) {
     this.headless = headless;
-    this.init();
   }
-  async init() {
+  async open() {
     this.browser = await puppeteer.launch({
       headless: this.headless,
       args: [
