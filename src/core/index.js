@@ -1,6 +1,6 @@
 const puppeteer = require('puppeteer');
 
-const { createTrackingPage } = require('./core/tracker')
+const { createTrackingPage } = require('./tracker')
 const { automate } = require('./automator')
 
 module.exports = {
