@@ -14,13 +14,13 @@ module.exports = async function app() {
     defaultViewport: null
   });
 
-  createTrackingPage({
-    id: 'test',
-    browser
-  })
-
-  // automate({
+  // createTrackingPage({
   //   id: 'test',
   //   browser
   // })
+
+  automate({
+    id: 'test',
+    browser
+  })
 }
