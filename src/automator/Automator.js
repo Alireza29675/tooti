@@ -1,4 +1,5 @@
 const { connectToStore } = require('../store')
+const wait = require('./utils/wait')
 
 class Automator {
   constructor({ id, browser }) {
@@ -21,10 +22,15 @@ class Automator {
   async automate() {
     for (let i = 0; i < this.events.length; i++) {
       const { type, payload } = this.events[i]
+      const isTheFirstEvent = i === 0
 
       // simulating navigation
-      if (type === 'navigation' && i === 0) {
-        await this.simulateNavigation(payload.url)
+      if (type === 'navigation') {
+        if (isTheFirstEvent) {
+          await this.openPage(payload.url)
+        } else {
+          await this.simulateNavigation()
+        }
       }
 
       // simulating click
@@ -37,15 +43,21 @@ class Automator {
         await this.simulateKeypress(payload.key)
       }
 
-      // simulating input
-      if (type === 'input') {
-        await this.simulateInput(payload.key)
+      // simulating focus
+      if (type === 'focus') {
+        await this.simulateFocus(payload.path)
       }
     }
   }
 
-  async simulateNavigation(url) {
+  async openPage(url) {
     await this.page.goto(url)
+  }
+
+  async simulateNavigation() {
+    await this.page.waitForNavigation({
+      waitUntil: 'networkidle0'
+    })
   }
 
   async simulateClick(selector) {
@@ -54,16 +66,14 @@ class Automator {
   }
 
   async simulateKeypress(key) {
+    await wait(200)
     await this.page.keyboard.press(key);
   }
 
-  async simulateInput(selector, text) {
-    await this.page.evaluate(({ selector, text }) => {
-      document.querySelector(selector).value = text;
-    }, {
-      selector,
-      text
-    })
+  async simulateFocus(selector) {
+    await this.page.waitForSelector(selector)
+    await this.page.focus(selector)
+    await wait(500)
   }
 }
 
