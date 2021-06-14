@@ -56,4 +56,4 @@ _// work in progress_
 
 Dr. Mohammad R. Moosavi
 
-Shiraz University of Technology and Science
+Shiraz University
