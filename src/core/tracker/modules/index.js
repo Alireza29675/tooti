@@ -1,5 +1,5 @@
 const fs = require('fs');
-const baseUrl = './src/tracker/modules/dist'
+const baseUrl = './src/core/tracker/modules/dist'
 
 const getModulePath = (moduleName) => `${baseUrl}/${moduleName}.bundle.js`
 
