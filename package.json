@@ -5,7 +5,7 @@
     "packages/*"
   ],
   "scripts": {
-    "dev": "mono-run dev --stream 500 -ui row"
+    "dev": "mono-run dev --stream 500 --ui row"
   },
   "devDependencies": {
     "monorepo-run": "^0.4.2"
