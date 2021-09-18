@@ -1,8 +1,6 @@
 const puppeteer = require('puppeteer-core');
 const locateChrome = require('locate-chrome');
-
-const { createTrackingPage } = require('./tracker')
-const { automate } = require('./automator')
+const api = require('./api')
 
 module.exports = async function app() {
   // Finding where the chrome is
@@ -18,6 +16,8 @@ module.exports = async function app() {
     ],
     defaultViewport: null
   });
+
+  api({ browser })
 
   const openingPage = (await browser.pages())[0];
 
