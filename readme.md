@@ -33,8 +33,6 @@ _// work in progress_
 - [x] Can automate pressing enter, tab and escape ✔️
 - [x] Can automate navigations ✔️
 - [x] Robot-like delays between actions ✔️
-- [ ] Go to urls which has been entered manually by user
-- [ ] Human-like delays between actions
 - [ ] Show suitable errors if selectors have been changed
 
 ### User Interface
@@ -43,10 +41,6 @@ _// work in progress_
   - So user can create new sessions
   - Can see a list of recorded sessions
   - Reply recorded sessions
-
-### Documentation
-
-- [ ] Make a readme tutorial with images
 
 ## Author
 
