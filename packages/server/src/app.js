@@ -14,22 +14,12 @@ module.exports = async function app() {
     executablePath: chromePath,
     args: [
       // '--auto-open-devtools-for-tabs',
-      '--window-size=400,800',
+      '--window-size=1920,1080',
     ],
     defaultViewport: null
   });
 
   const openingPage = (await browser.pages())[0];
 
-  openingPage.goto('https://www.google.com/');
-
-  // createTrackingPage({
-  //   id: 'test',
-  //   browser
-  // })
-
-  // automate({
-  //   id: 'test',
-  //   browser
-  // })
+  openingPage.goto('http://localhost:8000/');
 }
