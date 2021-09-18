@@ -1,7 +1,9 @@
 <template>
   <div class="basic-layout">
     <BasicLayoutHeader />
-    <slot />
+    <div class="basic-layout__container">
+      <slot />
+    </div>
   </div>
 </template>
 
@@ -26,6 +28,9 @@ body {
 }
 
 .basic-layout {
-  
+  &__container {
+    width: 1000px;
+    margin: 0 auto;
+  }
 }
 </style>
