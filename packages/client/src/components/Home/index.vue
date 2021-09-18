@@ -1,11 +1,17 @@
 <template>
-  <div>
-    <img src="https://user-images.githubusercontent.com/2771377/117469209-b4399980-af6a-11eb-89f8-d49dc06e688c.png" />
+  <div class="home">
+    <img src="/logo.png" />
   </div>
 </template>
 
 <script>
 export default {
-  name: 'index',
+  name: 'Home',
 }
 </script>
+
+<style lang="scss">
+.home {
+  background-color: #f5f5f5;
+}
+</style>
