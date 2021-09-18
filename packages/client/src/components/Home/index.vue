@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <img src="/logo.png" />
+    
   </div>
 </template>
 
@@ -12,6 +12,5 @@ export default {
 
 <style lang="scss">
 .home {
-  background-color: #f5f5f5;
 }
 </style>

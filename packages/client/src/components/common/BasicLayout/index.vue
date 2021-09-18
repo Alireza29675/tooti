@@ -1,12 +1,17 @@
 <template>
   <div class="basic-layout">
+    <BasicLayoutHeader />
     <slot />
   </div>
 </template>
 
 <script>
+import BasicLayoutHeader from "./BasicLayoutHeader.vue";
 export default {
   name: 'BasicLayout',
+  components: {
+    BasicLayoutHeader
+  }
 }
 </script>
 
