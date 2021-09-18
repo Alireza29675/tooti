@@ -1,6 +1,6 @@
 <template>
   <div class="basic-layout">
-    <BasicLayoutHeader />
+    <BasicLayoutHeader class="basic-layout__header" />
     <div class="basic-layout__container">
       <slot />
     </div>
@@ -28,6 +28,11 @@ body {
 }
 
 .basic-layout {
+  &__header {
+    position: sticky;
+    top: 0;
+  }
+
   &__container {
     width: 1000px;
     margin: 0 auto;
