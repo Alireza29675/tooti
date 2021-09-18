@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "npm run bundle && node index.js",
+    "dev": "nodemon index.js",
     "bundle": "webpack"
   },
   "repository": {
