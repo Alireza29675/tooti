@@ -1,4 +1,6 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 
-createApp(App).mount('#app')
+import http from './plugins/http'
+
+createApp(App).use(http).mount('#app')
