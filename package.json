@@ -1,35 +1,13 @@
 {
   "name": "tooti",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
   "scripts": {
-    "start": "npm run bundle && node index.js",
-    "dev": "nodemon index.js",
-    "bundle": "webpack"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Alireza29675/tooti.git"
-  },
-  "author": "Alireza Sheikholmolouki",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Alireza29675/tooti/issues"
-  },
-  "homepage": "https://github.com/Alireza29675/tooti#readme",
-  "dependencies": {
-    "nedb": "^1.8.0",
-    "puppeteer": "^9.0.0",
-    "unique-selector": "^0.5.0"
+    "dev": "mono-run dev --stream 500 -ui row"
   },
   "devDependencies": {
-    "@babel/core": "^7.14.0",
-    "babel-loader": "^8.2.2",
-    "css-loader": "^5.2.4",
-    "prettier": "^2.2.1",
-    "style-loader": "^2.0.0",
-    "webpack": "^5.36.2",
-    "webpack-cli": "^4.7.0"
+    "monorepo-run": "^0.4.2"
   }
 }
