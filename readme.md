@@ -10,7 +10,7 @@ Tooti is an automation tool which tracks user's behavior in a browser and automa
 ## Used Technologies
 
 - [Node.js](https://nodejs.org/en/)
-- Google's [puppeteer](https://developers.google.com/web/tools/puppeteer)
+- [Google's puppeteer](https://developers.google.com/web/tools/puppeteer)
 - [NeDB](https://github.com/louischatriot/nedb)
 - [Yarn Workspaces](https://yarnpkg.com/lang/en/docs/workspaces/)
 - [Vue](https://vuejs.org/)
@@ -46,10 +46,10 @@ _// work in progress_
 
 ### User Interface
 
-- [ ] Create a command-line interface
-  - So user can create new sessions
-  - Can see a list of recorded sessions
-  - Reply recorded sessions
+- [x] Create a user interface ✔️
+  - User can create new sessions ✔️
+  - Can see a list of recorded sessions ✔️
+  - Reply recorded sessions ✔️
 
 ## Author
 
