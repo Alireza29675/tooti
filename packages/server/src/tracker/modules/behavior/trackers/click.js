@@ -1,7 +1,7 @@
-import unique from 'unique-selector';
+import findSelector from '../utils/findSelector'
 
 export default function (reportEvent) {
   document.addEventListener('click', e => {
-    reportEvent({ path: unique(e.target) })
+    reportEvent({ path: findSelector(e.target) })
   }, true);
 }

@@ -1,4 +1,4 @@
-import unique from 'unique-selector';
+import findSelector from '../utils/findSelector'
 
 export default function(reportEvent) {
   const inputs = document.querySelectorAll('input');
@@ -6,7 +6,7 @@ export default function(reportEvent) {
   for (const input of inputs) {
     input.addEventListener('focus', (e) => {
       reportEvent({
-        path: unique(e.target),
+        path: findSelector(e.target),
       })
     })
   }
