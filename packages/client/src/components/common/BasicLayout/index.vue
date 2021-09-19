@@ -30,6 +30,7 @@ body {
 
 .basic-layout {
   &__header {
+    z-index: 999999;
     position: sticky;
     top: 0;
   }

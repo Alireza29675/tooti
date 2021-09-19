@@ -28,7 +28,7 @@ module.exports = async function app() {
 
   // TODO: delete this after debugging
   createTrackingPage(browser, {
-    url: 'https://divar.ir/',
+    url: 'https://google.com/',
     title: 'دیوار',
   });
 }
