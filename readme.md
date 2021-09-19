@@ -11,6 +11,7 @@ Tooti is an automation tool which tracks user's behavior in a browser and automa
 
 - [Node.js](https://nodejs.org/en/)
 - [Google's puppeteer](https://developers.google.com/web/tools/puppeteer)
+- [Express](https://expressjs.com/)
 - [NeDB](https://github.com/louischatriot/nedb)
 - [Yarn Workspaces](https://yarnpkg.com/lang/en/docs/workspaces/)
 - [Vue](https://vuejs.org/)
@@ -18,13 +19,13 @@ Tooti is an automation tool which tracks user's behavior in a browser and automa
 - [Axios](https://github.com/axios/axios)
 - [Element Plus UI Framework](https://element-plus.org/)
 
-## Other used libraries and assets
+## Assets Used in the Project
 
 - [Vazir Font](https://github.com/rastikerdar/vazir-font)
 
 ## Installation and Usage
 
-1. Ensure that you have [Node.js](https://nodejs.org/en/) and [Yarn](https://yarnpkg.com/getting-started/install) installed on your machine.
+1. First, ensure that you have [Node.js](https://nodejs.org/en/), [Yarn](https://yarnpkg.com/getting-started/install) and [Google Chrome](https://www.google.com/chrome/) installed on your machine.
 
 2. Clone the repository:
 
