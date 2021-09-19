@@ -48,9 +48,6 @@ export default {
           this.$http.post('/sessions', {
             title: this.recordForm.title,
             url: this.recordForm.url,
-          }).then(({ data }) => {
-            console.log(data);
-            this.$emit('submit')
           })
         }
       })
