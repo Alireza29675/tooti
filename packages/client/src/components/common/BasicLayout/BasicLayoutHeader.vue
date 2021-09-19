@@ -2,10 +2,10 @@
   <div class="basic-layout-header">
     <img class="basic-layout-header__logo" src="/logo.png" />
     <el-menu
-      :default-active="activeIndex"
-      router
+      :default-active="activeLink"
       class="basic-layout-header__menu"
       mode="horizontal"
+      @select="onMenuSelect"
     >
       <el-menu-item index="/">اجرای جلسات ضبط شده</el-menu-item>
       <el-menu-item index="/record">ضبط یک جلسه جدید</el-menu-item>
@@ -19,13 +19,17 @@ export default {
   name: 'BasicLayoutHeader',
   data() {
     return {
-      activeIndex: this.$route.path
+      activeLink: ''
+    }
+  },
+  methods: {
+    onMenuSelect(route) {
+      this.$router.push(route)
     }
   },
   watch: {
     $route(to) {
-      console.log('hello');
-      this.activeLink = to.path;
+      this.activeLink = to.path
     }
   },
 }
