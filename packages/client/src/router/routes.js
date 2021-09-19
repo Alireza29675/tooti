@@ -1,7 +1,7 @@
 export default [
   {
     path: '/',
-    name: 'home',
-    component: () => import('@@/Home/index.vue'),
+    name: 'session-list',
+    component: () => import('@@/SessionList/index.vue'),
   }
 ]

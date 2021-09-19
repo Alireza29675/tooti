@@ -1,16 +1,16 @@
 <template>
-  <div class="home">
+  <div class="session-list">
     <el-empty description="جلسه‌ی ضبط شده‌ای برای اجرا وجود ندارد"></el-empty>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'Home',
+  name: 'SessionList',
 }
 </script>
 
 <style lang="scss">
-.home {
+.session-list {
 }
 </style>
