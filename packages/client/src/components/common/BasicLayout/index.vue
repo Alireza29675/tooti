@@ -36,7 +36,8 @@ body {
   }
 
   &__container {
-    width: 1000px;
+    width: 90%;
+    max-width: 1000px;
     margin: 0 auto;
   }
 }
