@@ -41,7 +41,9 @@ export default {
       this.$http.post(`/sessions/${id}`)
     },
     deleteSession(id) {
-      this.$http.delete(`/sessions/${id}`)
+      this.$http.delete(`/sessions/${id}`).then(() => {
+        this.$emit('refresh')
+      })
     },
   },
 }

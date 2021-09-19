@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <div v-loading="loading">
     <SessionListEmpty v-if="!sessions.length" />
-    <SessionListTable v-else :sessions="sessions" />
+    <SessionListTable v-else :sessions="sessions" @refresh="fetchSessions" />
   </div>
 </template>
 
@@ -17,13 +17,23 @@ export default {
   },
   data() {
     return {
+      loading: true,
       sessions: []
     }
   },
   mounted() {
-    this.$http.get('/sessions').then(({ sessions }) => {
-      this.sessions = sessions;
-    })
+    this.fetchSessions()
+  },
+  methods: {
+    fetchSessions() {
+      this.loading = true
+
+      this.$http.get('/sessions').then(({ sessions }) => {
+        this.sessions = sessions;
+      }).finally(() => {
+        this.loading = false
+      })
+    }
   },
 }
 </script>
