@@ -22,6 +22,7 @@ class Automator {
   async automate() {
     for (let i = 0; i < this.events.length; i++) {
       const { type, payload } = this.events[i]
+
       const isTheFirstEvent = i === 0
 
       // simulating navigation
@@ -29,7 +30,7 @@ class Automator {
         if (isTheFirstEvent) {
           await this.openPage(payload.url)
         } else {
-          await this.simulateNavigation()
+          await this.simulateNavigation(payload.url)
         }
       }
 
@@ -38,9 +39,9 @@ class Automator {
         await this.simulateClick(payload.path)
       }
 
-      // simulating keyboard press
-      if (type === 'keyboard') {
-        await this.simulateKeypress(payload.key)
+      // simulating input change
+      if (type === 'change') {
+        await this.simulateInputChange(payload)
       }
 
       // simulating focus
@@ -48,26 +49,37 @@ class Automator {
         await this.simulateFocus(payload.path)
       }
     }
+
+    console.log(`[DONE playing ${this.id}.db]`)
   }
 
   async openPage(url) {
     await this.page.goto(url)
   }
 
-  async simulateNavigation() {
+  async simulateNavigation(url) {
+    if (this.page.url() === url) {
+      await wait(1000)
+      return Promise.resolve();
+    }
+
+    this.page.goto(url, { waitUntil: 'domcontentloaded', timeout: 0 })
     await this.page.waitForNavigation({
-      waitUntil: 'networkidle0'
+      waitUntil: 'domcontentloaded',
+      timeout: 0 
     })
   }
 
   async simulateClick(selector) {
     await this.page.waitForSelector(selector)
     await this.page.click(selector)
+    await wait(1000)
   }
 
-  async simulateKeypress(key) {
+  async simulateInputChange({ path, value }) {
     await wait(200)
-    await this.page.keyboard.press(key);
+    await this.page.waitForSelector(path)
+    await this.page.$eval(path, (el, value) => el.value = value, value);
   }
 
   async simulateFocus(selector) {

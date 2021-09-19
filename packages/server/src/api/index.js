@@ -72,7 +72,5 @@ module.exports = ({ browser }) => {
   })
 
 
-  app.listen(port, () => {
-    console.log(`API is listening at http://localhost:${port}`)
-  })
+  app.listen(port)
 }
