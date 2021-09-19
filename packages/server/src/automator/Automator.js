@@ -2,7 +2,7 @@ const { connectToStore } = require('../store')
 const wait = require('./utils/wait')
 
 class Automator {
-  constructor({ id, browser }) {
+  constructor(browser, { id }) {
     this.id = id
     this.browser = browser;
     this.storage = connectToStore(id);
