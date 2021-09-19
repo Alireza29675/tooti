@@ -9,7 +9,6 @@
     >
       <el-menu-item index="/">اجرای جلسات ضبط شده</el-menu-item>
       <el-menu-item index="/record">ضبط یک جلسه جدید</el-menu-item>
-      <el-menu-item index="/about">درباره‌ی این برنامه</el-menu-item>
     </el-menu>
   </div>
 </template>

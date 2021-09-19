@@ -4,6 +4,7 @@ const cors = require('cors')
 
 const { createTrackingPage } = require('../tracker')
 const { automate } = require('../automator')
+const { getAllSessions } = require('../store/sessions')
 
 module.exports = ({ browser }) => {
   const app = express()
@@ -24,7 +25,18 @@ module.exports = ({ browser }) => {
     })
   })
 
-  app.post('/session/create', (req, res) => {
+  app.get('/sessions', (req, res) => {
+    getAllSessions().then((sessions) => {
+      res.json({
+        status: 200,
+        data: {
+          sessions
+        }
+      }) 
+    })
+  })
+
+  app.post('/sessions', (req, res) => {
     const id = uuid.v4()
     const { title, url } = req.body
     const data = {
@@ -36,7 +48,7 @@ module.exports = ({ browser }) => {
     res.status(200).json({ status: 200, data })
   })
 
-  app.post('/session/run/:id', (req, res) => {
+  app.post('/sessions/:id', (req, res) => {
     automate({
       id: req.params.id,
       browser
