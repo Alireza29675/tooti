@@ -22,9 +22,39 @@ Tooti is an automation tool which tracks user's behavior in a browser and automa
 
 - [Vazir Font](https://github.com/rastikerdar/vazir-font)
 
-## Documentation
+## Installation and Usage
 
-_// work in progress_
+1. Ensure that you have [Node.js](https://nodejs.org/en/) and [Yarn](https://yarnpkg.com/getting-started/install) installed on your machine.
+
+2. Clone the repository:
+
+```bash
+git clone https://github.com/Alireza29675/tooti
+```
+
+3. Open Terminal and change the directory to the project's root directory:
+
+```bash
+cd tooti
+```
+
+4. Install the project's dependencies:
+
+```bash
+yarn install
+```
+
+5. Run the project:
+
+```bash
+yarn dev
+```
+
+6. Browser will be auto started and you should see this page:
+
+<img alt="Tooti" src="https://user-images.githubusercontent.com/2771377/133924202-61e048b2-4e49-4106-8bd9-43cb4aa8ccfe.png">
+
+7. App is ready to use.
 
 ## Todos
 
