@@ -12,6 +12,15 @@ Tooti is an automation tool which tracks user's behavior in a browser and automa
 - [Node.js](https://nodejs.org/en/)
 - Google's [puppeteer](https://developers.google.com/web/tools/puppeteer)
 - [NeDB](https://github.com/louischatriot/nedb)
+- [Yarn Workspaces](https://yarnpkg.com/lang/en/docs/workspaces/)
+- [Vue](https://vuejs.org/)
+- [Vue Router](https://router.vuejs.org/)
+- [Axios](https://github.com/axios/axios)
+- [Element Plus UI Framework](https://element-plus.org/)
+
+## Other used libraries and assets
+
+- [Vazir Font](https://github.com/rastikerdar/vazir-font)
 
 ## Documentation
 
