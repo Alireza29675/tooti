@@ -25,7 +25,20 @@ function getAllSessions() {
   })
 }
 
+function deleteSession(id) {
+  return new Promise((resolve, reject) => {
+    db.remove({ id }, { multi: true }, (err, numRemoved) => {
+      if (err) {
+        reject(err)
+      } else {
+        resolve(numRemoved)
+      }
+    })
+  })
+}
+
 module.exports = {
   createNewSession,
-  getAllSessions
+  getAllSessions,
+  deleteSession
 }

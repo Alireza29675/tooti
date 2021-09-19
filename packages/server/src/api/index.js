@@ -4,7 +4,7 @@ const cors = require('cors')
 
 const { createTrackingPage } = require('../tracker')
 const { automate } = require('../automator')
-const { getAllSessions } = require('../store/sessions')
+const { getAllSessions, deleteSession } = require('../store/sessions')
 
 module.exports = ({ browser }) => {
   const app = express()
@@ -55,9 +55,22 @@ module.exports = ({ browser }) => {
     });
     res.status(200).json({
       status: 200,
-      data: {}
+      data: {
+        id: req.params.id,
+      }
     })
   })
+
+  app.delete('/sessions/:id', (req, res) => {
+    deleteSession(req.params.id)
+    res.status(200).json({
+      status: 200,
+      data: {
+        id: req.params.id,
+      }
+    })
+  })
+
 
   app.listen(port, () => {
     console.log(`API is listening at http://localhost:${port}`)
