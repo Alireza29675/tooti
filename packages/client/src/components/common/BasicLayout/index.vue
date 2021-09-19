@@ -19,11 +19,11 @@ export default {
 
 <style lang="scss">
 * {
-  direction: rtl;
   font-family: "Vazir", sans-serif;
 }
 
 body {
+  direction: rtl;
   margin: 0;
   padding: 0;
 }
