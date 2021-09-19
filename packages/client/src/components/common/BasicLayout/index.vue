@@ -19,7 +19,8 @@ export default {
 
 <style lang="scss">
 * {
-  font-family: "Open Sans", sans-serif;
+  direction: rtl;
+  font-family: "Vazir", sans-serif;
 }
 
 body {

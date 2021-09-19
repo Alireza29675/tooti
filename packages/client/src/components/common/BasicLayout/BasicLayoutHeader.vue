@@ -7,9 +7,9 @@
       class="basic-layout-header__menu"
       mode="horizontal"
     >
-      <el-menu-item index="/">Run a Session</el-menu-item>
-      <el-menu-item index="/create">Create a New Session</el-menu-item>
-      <el-menu-item index="/about">About This App</el-menu-item>
+      <el-menu-item index="/">اجرای جلسات ضبط شده</el-menu-item>
+      <el-menu-item index="/create">ضبط یک جلسه جدید</el-menu-item>
+      <el-menu-item index="/about">درباره‌ی این برنامه</el-menu-item>
     </el-menu>
   </div>
 </template>

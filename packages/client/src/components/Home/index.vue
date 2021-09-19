@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    
+    <el-empty description="جلسه‌ی ضبط شده‌ای برای اجرا وجود ندارد"></el-empty>
   </div>
 </template>
 
