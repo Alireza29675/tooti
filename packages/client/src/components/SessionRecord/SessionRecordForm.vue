@@ -11,7 +11,7 @@
         <el-input placeholder="جستجوی آخرین ماشین‌های فروشی شیراز در دیوار" v-model="recordForm.title" />
       </el-form-item>
       <el-form-item label="آدرس شروع" prop="url">
-        <el-input :input-style="{ direction: 'ltr' }" placeholder="http://divar.ir" v-model="recordForm.url" />
+        <el-input :input-style="{ direction: 'ltr' }" placeholder="http://divar.ir/" v-model="recordForm.url" />
       </el-form-item>
       <div class="session-record-form__submit">
         <el-button type="primary" @click="submitForm">شروع ضبط جلسه</el-button>
