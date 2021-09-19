@@ -14,7 +14,6 @@ class TrackingPage {
   async init() {
     // Initializing the page
     this.page = await this.browser.newPage();
-    this.page.goto(this.url)
     // Async initializations
     await this.exposeFunctionsToClient();
     // Clear the store data
@@ -26,14 +25,12 @@ class TrackingPage {
   }
 
   onReady() {
-    // this.goto('https://google.com')
+    this.goto(this.url)
   }
 
   async exposeFunctionsToClient() {
     await this.page.exposeFunction('reportEvent', event => {
-      // TODO: delete this after debugging
-      console.log(event)
-      // this.storage.store(event)
+      this.storage.store(event)
     });
   }
 
@@ -63,7 +60,7 @@ class TrackingPage {
   }
 
   onClose() {
-    console.log('Session closed!')
+    console.log(`[Session closed and saved into ${this.id}.db]`)
   }
 
   goto(url) {
