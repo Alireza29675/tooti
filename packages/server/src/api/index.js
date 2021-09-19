@@ -49,9 +49,8 @@ module.exports = ({ browser }) => {
   })
 
   app.post('/sessions/:id', (req, res) => {
-    automate({
+    automate(browser, {
       id: req.params.id,
-      browser
     });
     res.status(200).json({
       status: 200,
