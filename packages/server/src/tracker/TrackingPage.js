@@ -31,7 +31,9 @@ class TrackingPage {
 
   async exposeFunctionsToClient() {
     await this.page.exposeFunction('reportEvent', event => {
-      this.storage.store(event)
+      // TODO: delete this after debugging
+      console.log(event)
+      // this.storage.store(event)
     });
   }
 

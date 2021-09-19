@@ -6,7 +6,8 @@
   "scripts": {
     "start": "npm run bundle && node index.js",
     "dev": "nodemon index.js",
-    "bundle": "webpack"
+    "bundle": "webpack",
+    "bundle:watch": "webpack --watch"
   },
   "repository": {
     "type": "git",

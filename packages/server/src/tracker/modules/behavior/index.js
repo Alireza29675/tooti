@@ -2,6 +2,8 @@ import trackClicks from './trackers/click'
 import trackFocuses from './trackers/focus'
 import trackKeyboard from './trackers/keyboard'
 
+import './views/selection-preview'
+
 import reportEvent from './utils/reportEvent'
 
 import './stylesheets/style.css'

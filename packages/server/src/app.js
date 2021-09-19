@@ -13,7 +13,7 @@ module.exports = async function app() {
     headless: false,
     executablePath: chromePath,
     args: [
-      // '--auto-open-devtools-for-tabs',
+      '--auto-open-devtools-for-tabs',
       '--window-size=1366,768',
     ],
     defaultViewport: null
@@ -26,7 +26,7 @@ module.exports = async function app() {
   const openingPage = (await browser.pages())[0];
   openingPage.goto('http://localhost:8000/');
 
-  // TODO: delete this
+  // TODO: delete this after debugging
   createTrackingPage(browser, {
     url: 'https://divar.ir/',
     title: 'دیوار',
