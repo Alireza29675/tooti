@@ -2,8 +2,10 @@ const { connectToStore } = require('../store')
 const { inject } = require('./modules')
 
 class TrackingPage {
-  constructor({ id, browser }) {
+  constructor(browser, { id, title, url }) {
     this.id = id
+    this.title = title
+    this.url = url
     this.browser = browser;
     this.storage = connectToStore(id);
     this.init();
@@ -12,6 +14,7 @@ class TrackingPage {
   async init() {
     // Initializing the page
     this.page = await this.browser.newPage();
+    this.page.goto(this.url)
     // Async initializations
     await this.exposeFunctionsToClient();
     // Clear the store data

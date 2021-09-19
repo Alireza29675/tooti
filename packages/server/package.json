@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/Alireza29675/tooti#readme",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "locate-chrome": "^0.1.1",
     "nedb": "^1.8.0",

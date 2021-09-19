@@ -21,5 +21,5 @@ module.exports = async function app() {
 
   const openingPage = (await browser.pages())[0];
 
-  openingPage.goto('http://localhost:8000/');
+  openingPage.goto('http://localhost:8000/record');
 }

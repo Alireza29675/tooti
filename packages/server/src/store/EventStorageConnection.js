@@ -9,7 +9,7 @@ class EventStorageConnection {
     this.lastTimestamp = Date.now()
 
     // creating the database
-    this.db = connectToStore(`events/${id}`)
+    this.db = connectToStore(`sessions/${id}`)
   }
 
   getEvents(conditions = {}) {

@@ -28,8 +28,8 @@ export default {
   data() {
     return {
       recordForm: {
-        title: '',
-        url: '',
+        title: 'Example',
+        url: 'http://example.com',
       },
     }
   },
@@ -45,7 +45,13 @@ export default {
     submitForm() {
       this.$refs['recordForm'].validate((valid) => {
         if (valid) {
-          alert('submit!')
+          this.$http.post('/session/create', {
+            title: this.recordForm.title,
+            url: this.recordForm.url,
+          }).then(({ data }) => {
+            console.log(data);
+            this.$emit('submit')
+          })
         }
       })
     },
