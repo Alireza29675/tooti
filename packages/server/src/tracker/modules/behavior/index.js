@@ -1,16 +1,21 @@
-import trackClicks from './trackers/click'
-import trackFocuses from './trackers/focus'
-
-import './views/selection-preview'
-
-import reportEvent from './utils/reportEvent'
+import { addMutation, startObservation } from './utils/observe'
 
 import './stylesheets/style.css'
 
+import trackSelection from './trackers/selection'
+import trackClick from './trackers/click'
+import trackFocus from './trackers/focus'
+import trackTyping from './trackers/typing'
+
 const start = () => {
-  trackClicks(reportEvent('click'))
-  trackFocuses(reportEvent('focus'))
+  addMutation(trackSelection)
+  addMutation(trackClick)
+  addMutation(trackFocus)
+  addMutation(trackTyping)
+
+  startObservation()
 }
+
 
 if (!window._tootiBehaviourTrackerHasStarted) start();
 
