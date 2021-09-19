@@ -1,12 +1,17 @@
 <template>
   <div class="session-list">
-    <el-empty description="جلسه‌ی ضبط شده‌ای برای اجرا وجود ندارد"></el-empty>
+    <SessionListEmpty />
   </div>
 </template>
 
 <script>
+import SessionListEmpty from './SessionListEmpty.vue';
+
 export default {
   name: 'SessionList',
+  components: {
+    SessionListEmpty
+  }
 }
 </script>
 
