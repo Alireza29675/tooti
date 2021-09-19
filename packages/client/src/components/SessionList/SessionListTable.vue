@@ -3,15 +3,25 @@
     <el-table class="session-list-table__table" :data="sessions" stripe>
       <el-table-column prop="title" label="عنوان"></el-table-column>
       <el-table-column prop="url" label="آدرس شروع"></el-table-column>
-      <el-table-column class="session-list-table__run-column" label="اجرا" width="100" v-slot="{ id }">
-        <el-button
-          class="session-list-table__run-button"
-          type="primary"
-          size="mini"
-          @click="runSession(id)"
-        >
-          <i class="el-icon-video-play"></i>
-        </el-button>
+      <el-table-column class="session-list-table__run-column" width="120" v-slot="{ row: { id } }">
+        <el-button-group>
+          <el-button
+            class="session-list-table__run-button"
+            type="danger"
+            size="mini"
+            @click="deleteSession(id)"
+          >
+            <i class="el-icon-delete"></i>
+          </el-button>
+          <el-button
+            class="session-list-table__run-button"
+            type="primary"
+            size="mini"
+            @click="runSession(id)"
+          >
+            <i class="el-icon-video-play"></i>
+          </el-button>
+        </el-button-group>
       </el-table-column>
     </el-table>
   </div>
@@ -29,7 +39,10 @@ export default {
   methods: {
     runSession(id) {
       this.$http.post(`/sessions/${id}`)
-    }
+    },
+    deleteSession(id) {
+      this.$http.delete(`/sessions/${id}`)
+    },
   },
 }
 </script>
@@ -45,11 +58,7 @@ export default {
   }
 
   &__run-button {
-    font-size: 1.5rem;
-  }
-
-  &__run-column * {
-    text-align: center;
+    font-size: 1rem;
   }
 }
 </style>

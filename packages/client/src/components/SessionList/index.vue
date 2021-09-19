@@ -23,7 +23,6 @@ export default {
   mounted() {
     this.$http.get('/sessions').then(({ sessions }) => {
       this.sessions = sessions;
-      console.log(sessions)
     })
   },
 }
