@@ -2,17 +2,15 @@ import { addMutation, startObservation } from './utils/observe'
 
 import './stylesheets/style.css'
 
-import trackSelection from './trackers/selection'
-import trackClick from './trackers/click'
+import './trackers/selection'
+import './trackers/click'
+
 import trackFocus from './trackers/focus'
 import trackTyping from './trackers/typing'
 
 const start = () => {
-  addMutation(trackSelection)
-  addMutation(trackClick)
   addMutation(trackFocus)
   addMutation(trackTyping)
-
   startObservation()
 }
 

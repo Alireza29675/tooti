@@ -1,10 +1,9 @@
 import findSelector from '../utils/findSelector'
+import emit from "../utils/emit"
 
-export default function({ element, emit }) {
-  element.addEventListener('click', (e) => {
-    e.stopPropagation();
-    emit('click', {
-      path: findSelector(e.target),
-    })
+document.body.addEventListener('click', (e) => {
+  console.log(e);
+  emit('click', {
+    path: findSelector(e.target),
   })
-}
+})

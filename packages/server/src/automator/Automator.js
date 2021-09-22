@@ -71,6 +71,7 @@ class Automator {
   }
 
   async simulateClick(selector) {
+    await wait(1000)
     await this.page.waitForSelector(selector)
     await this.page.click(selector)
     await wait(1000)
